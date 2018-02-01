@@ -1,0 +1,42 @@
+
+	{
+		"data" :
+		[
+         {
+         "img" : "plastics",
+         "day": "일요일",
+         "comment": "스티로폼, 플라스틱류, 비닐류"
+         },
+			{
+				"img" : "plastics",
+				"day": "월요일",
+				"comment": "플라스틱류"
+			},
+			{
+				"img" : "paper",
+				"day": "화요일",
+				"comment": "종이류, 병류, 불연성 쓰레기(유리류, 연탄재, 자기류, 거울 등)"
+			},
+			{
+				"img" : "cans",
+				"day": "수요일",
+				"comment": "캔, 고철류"
+			},
+			{
+				"img" : "plastic_bag2",
+				"day": "목요일",
+				"comment": "스티로폼, 비닐류(라면, 과자봉지, 비닐 등)"
+			},
+			{
+				"img" : "plastics",
+				"day": "금요일",
+				"comment": "플라스틱류"
+			},
+			{
+				"img" : "bottle",
+				"day": "토요일",
+				"comment": "종이류, 병류, 불연성 쓰레기(유리류, 연탄재, 자기류, 거울 등)"
+			}
+			
+		]
+	}
