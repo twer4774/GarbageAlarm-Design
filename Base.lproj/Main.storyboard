@@ -264,11 +264,77 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCM-Ys-BmY" customClass="GradientView" customModule="GarbageAlarm_Design" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="70" width="375" height="253"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWu-tQ-BFj">
+                                        <rect key="frame" x="17" y="39" width="142" height="163"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="메모기능입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft3-Pk-0DA">
+                                        <rect key="frame" x="28" y="220" width="330" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yce-3a-9aw">
+                                        <rect key="frame" x="158" y="56" width="200" height="146"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="deF-bY-faa">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="36"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-ko-A2A">
+                                                        <rect key="frame" x="0.0" y="18" width="39" height="18"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="jbH-g0-g7l"/>
+                                                            <constraint firstAttribute="width" constant="39" id="l70-MS-vKT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bV7-QI-Rgg">
+                                                        <rect key="frame" x="41" y="0.0" width="159" height="36"/>
+                                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                                        <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Prq-Qd-jQ2"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쓰레기 버리는 날" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXQ-qF-za7">
+                                                <rect key="frame" x="0.0" y="46" width="200" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="0qS-f5-RYs"/>
+                                                    <constraint firstAttribute="height" constant="100" id="jg2-ta-UMr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HXQ-qF-za7" secondAttribute="bottom" id="KMJ-CM-sFs"/>
+                                            <constraint firstItem="HXQ-qF-za7" firstAttribute="leading" secondItem="yce-3a-9aw" secondAttribute="leading" id="a3s-2O-K8E"/>
+                                            <constraint firstAttribute="trailing" secondItem="HXQ-qF-za7" secondAttribute="trailing" id="bbO-qm-vua"/>
+                                            <constraint firstItem="HXQ-qF-za7" firstAttribute="top" secondItem="yce-3a-9aw" secondAttribute="top" constant="46" id="xRp-Iy-1g8"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ft3-Pk-0DA" secondAttribute="trailing" constant="17" id="AD0-Xh-hlS"/>
+                                    <constraint firstAttribute="trailing" secondItem="yce-3a-9aw" secondAttribute="trailing" constant="17" id="DQX-eS-gSJ"/>
+                                    <constraint firstItem="yce-3a-9aw" firstAttribute="top" secondItem="uCM-Ys-BmY" secondAttribute="top" constant="56" id="R1L-RV-o3p"/>
+                                    <constraint firstItem="ft3-Pk-0DA" firstAttribute="leading" secondItem="uCM-Ys-BmY" secondAttribute="leading" constant="28" id="avM-De-YdZ"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mHY-Cm-tUO">
-                                <rect key="frame" x="0.0" y="68" width="375" height="294"/>
+                                <rect key="frame" x="0.0" y="334" width="375" height="284"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="294" id="NeM-EK-ZjY"/>
+                                    <constraint firstAttribute="height" constant="284" id="NeM-EK-ZjY"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nle-ka-l2h" customClass="ScrollCardCollectionViewLayout" customModule="GarbageAlarm_Design" customModuleProvider="target">
                                     <size key="itemSize" width="294" height="216"/>
@@ -278,7 +344,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wcp-ao-PEV">
-                                        <rect key="frame" x="0.0" y="39" width="294" height="216"/>
+                                        <rect key="frame" x="0.0" y="34" width="294" height="216"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="294" height="216"/>
@@ -291,38 +357,51 @@
                                     <outlet property="delegate" destination="H6h-f4-tLk" id="lFT-Hk-5br"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-LZ-qDu">
-                                <rect key="frame" x="0.0" y="372" width="375" height="201"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtS-eQ-REe" customClass="GradientView" customModule="GarbageAlarm_Design" customModuleProvider="target">
+                                <rect key="frame" x="5" y="329" width="365" height="3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="Dxg-fD-pO7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
+                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Om6-sg-yqg" firstAttribute="bottom" secondItem="IzX-LZ-qDu" secondAttribute="bottom" constant="45" id="3hk-pU-GdA"/>
-                            <constraint firstItem="Om6-sg-yqg" firstAttribute="bottom" secondItem="IzX-LZ-qDu" secondAttribute="bottom" constant="45" id="8Hq-Vj-Ulv"/>
+                            <constraint firstItem="uCM-Ys-BmY" firstAttribute="top" secondItem="hjv-l3-tus" secondAttribute="bottom" constant="10" id="1oP-dP-Ccx"/>
+                            <constraint firstItem="mHY-Cm-tUO" firstAttribute="top" secondItem="GtS-eQ-REe" secondAttribute="bottom" constant="2" id="1uB-Ej-vgl"/>
                             <constraint firstItem="hjv-l3-tus" firstAttribute="leading" secondItem="Om6-sg-yqg" secondAttribute="leading" id="Bs4-rI-D96"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="top" secondItem="mHY-Cm-tUO" secondAttribute="bottom" constant="10" id="CSn-JI-NSB"/>
+                            <constraint firstItem="uCM-Ys-BmY" firstAttribute="trailing" secondItem="Om6-sg-yqg" secondAttribute="trailing" id="Dem-fx-ess"/>
+                            <constraint firstAttribute="trailing" secondItem="GtS-eQ-REe" secondAttribute="trailing" constant="5" id="KmN-qp-OBw"/>
                             <constraint firstItem="mHY-Cm-tUO" firstAttribute="leading" secondItem="Om6-sg-yqg" secondAttribute="leading" id="MI5-Gy-Pqh"/>
+                            <constraint firstItem="GtS-eQ-REe" firstAttribute="leading" secondItem="urv-k2-1BF" secondAttribute="leading" constant="5" id="MK4-6D-Hil"/>
                             <constraint firstItem="mHY-Cm-tUO" firstAttribute="trailing" secondItem="Om6-sg-yqg" secondAttribute="trailing" id="SYr-3d-Pdu"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="leading" secondItem="Om6-sg-yqg" secondAttribute="leading" id="UQt-uT-4rZ"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="leading" secondItem="Om6-sg-yqg" secondAttribute="leading" id="V1G-wa-2K7"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="trailing" secondItem="Om6-sg-yqg" secondAttribute="trailing" id="ec4-VR-ffw"/>
+                            <constraint firstItem="GtS-eQ-REe" firstAttribute="top" secondItem="uCM-Ys-BmY" secondAttribute="bottom" constant="6" id="Ue2-E8-ijZ"/>
+                            <constraint firstItem="uCM-Ys-BmY" firstAttribute="leading" secondItem="Om6-sg-yqg" secondAttribute="leading" id="UlB-Q0-sz3"/>
                             <constraint firstItem="hjv-l3-tus" firstAttribute="trailing" secondItem="Om6-sg-yqg" secondAttribute="trailing" id="eil-g3-lvN"/>
                             <constraint firstItem="hjv-l3-tus" firstAttribute="top" secondItem="urv-k2-1BF" secondAttribute="top" constant="16" id="hRJ-IC-Kso"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="trailing" secondItem="Om6-sg-yqg" secondAttribute="trailing" id="lnc-wg-0UO"/>
-                            <constraint firstItem="IzX-LZ-qDu" firstAttribute="top" secondItem="mHY-Cm-tUO" secondAttribute="bottom" constant="10" id="n8W-D1-F1u"/>
-                            <constraint firstItem="mHY-Cm-tUO" firstAttribute="top" secondItem="hjv-l3-tus" secondAttribute="bottom" constant="8" id="tUq-Ln-zvi"/>
+                            <constraint firstItem="mHY-Cm-tUO" firstAttribute="top" secondItem="hjv-l3-tus" secondAttribute="bottom" constant="274" id="tUq-Ln-zvi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Om6-sg-yqg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="분리수거" id="YiO-Dj-Xfh"/>
                     <connections>
                         <outlet property="collectionView" destination="mHY-Cm-tUO" id="uMw-As-BLA"/>
+                        <outlet property="lbBigViewComment" destination="HXQ-qF-za7" id="hMY-Jj-vxp"/>
+                        <outlet property="lbBigViewDay" destination="bV7-QI-Rgg" id="Vv0-xn-3N5"/>
+                        <outlet property="lbBigViewImage" destination="XWu-tQ-BFj" id="ydu-eZ-1zE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1z-0j-gwj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18.399999999999999" y="763.26836581709154"/>
+            <point key="canvasLocation" x="-18.399999999999999" y="801.94902548725645"/>
         </scene>
     </scenes>
     <resources>

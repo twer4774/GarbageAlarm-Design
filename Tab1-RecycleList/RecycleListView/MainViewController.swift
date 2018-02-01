@@ -15,6 +15,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+   
+    @IBOutlet weak var lbBigViewImage: UIImageView!
+    @IBOutlet weak var lbBigViewDay: UILabel!
+    @IBOutlet weak var lbBigViewComment: UILabel!
     
     fileprivate var cardSize: CGSize{
         let layout = collectionView.collectionViewLayout as! ScrollCardCollectionViewLayout
@@ -40,6 +44,9 @@ class MainViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        
+        
     }
     
     
@@ -78,8 +85,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             flag = true
         }
         if(dataController.getDay() == row.day){
-            cell.innerView.FirstColor = UIColor.brown
-            cell.innerView.SecondColor = UIColor.black
+            cell.innerView.FirstColor = UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            cell.innerView.SecondColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 146.0/255.0, alpha: 1.0)
+            
+            self.lbBigViewImage.image = UIImage(named: "\(row.image!)")
+            self.lbBigViewDay.text = row.day
+            self.lbBigViewComment.text = row.comment
         }
         
         return cell

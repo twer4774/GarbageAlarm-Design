@@ -53,16 +53,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="55m-i2-3SG">
-                                <rect key="frame" x="5" y="130" width="291" height="8"/>
+                                <rect key="frame" x="5" y="130" width="291" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="f61-A5-qUG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OPj-ij-vj7" secondAttribute="trailing" constant="25" id="4Ft-BQ-g3b"/>
                             <constraint firstItem="FPL-82-aaI" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="15" id="6wx-yo-xAS"/>
                             <constraint firstAttribute="bottom" secondItem="0Op-rG-zCC" secondAttribute="bottom" constant="90" id="7qa-Sv-yHJ"/>
                             <constraint firstItem="FPL-82-aaI" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="145" id="GUj-xD-rth"/>
-                            <constraint firstItem="55m-i2-3SG" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="130" id="Icr-Wm-qyF"/>
                             <constraint firstAttribute="bottom" secondItem="FPL-82-aaI" secondAttribute="bottom" constant="45" id="JU3-Nf-1UP"/>
                             <constraint firstAttribute="bottom" secondItem="eg0-J9-n9f" secondAttribute="bottom" constant="15" id="MDb-UO-4qX"/>
                             <constraint firstItem="OPj-ij-vj7" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="120" id="SU8-7T-I8D"/>
@@ -70,28 +71,26 @@
                             <constraint firstAttribute="trailing" secondItem="FPL-82-aaI" secondAttribute="trailing" constant="237" id="Tkn-1f-RoN"/>
                             <constraint firstItem="eg0-J9-n9f" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="170" id="UxV-zH-VUg"/>
                             <constraint firstAttribute="bottom" secondItem="OPj-ij-vj7" secondAttribute="bottom" constant="170" id="XmU-Fa-hXK"/>
+                            <constraint firstItem="55m-i2-3SG" firstAttribute="top" secondItem="ymE-7l-tcS" secondAttribute="bottom" constant="2" id="Zcz-vi-dPd"/>
                             <constraint firstItem="OPj-ij-vj7" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="20" id="aM5-GQ-kkQ"/>
                             <constraint firstAttribute="trailing" secondItem="eg0-J9-n9f" secondAttribute="trailing" constant="15" id="aYX-ek-zTp"/>
                             <constraint firstItem="PVa-d2-ig4" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="250" id="b38-N3-Wfo"/>
                             <constraint firstItem="eg0-J9-n9f" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="15" id="fRS-KX-wOe"/>
                             <constraint firstAttribute="trailing" secondItem="ymE-7l-tcS" secondAttribute="trailing" constant="15" id="fYu-n5-e47"/>
-                            <constraint firstAttribute="bottom" secondItem="55m-i2-3SG" secondAttribute="bottom" constant="70" id="g4q-Nk-4Tk"/>
                             <constraint firstItem="0Op-rG-zCC" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="10" id="gFL-D7-HLc"/>
-                            <constraint firstAttribute="trailing" secondItem="55m-i2-3SG" secondAttribute="trailing" constant="5" id="gR0-j8-jgR"/>
                             <constraint firstAttribute="bottom" secondItem="ymE-7l-tcS" secondAttribute="bottom" constant="80" id="hrr-uK-M71"/>
                             <constraint firstItem="ymE-7l-tcS" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="125" id="jav-4w-KMw"/>
                             <constraint firstAttribute="trailing" secondItem="PVa-d2-ig4" secondAttribute="trailing" constant="25" id="sOi-zp-gZY"/>
                             <constraint firstItem="0Op-rG-zCC" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="15" id="ta2-qY-lt4"/>
+                            <constraint firstItem="55m-i2-3SG" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="5" id="uGJ-Kz-bxN"/>
+                            <constraint firstAttribute="trailing" secondItem="55m-i2-3SG" secondAttribute="trailing" constant="5" id="wY5-CM-P7o"/>
                             <constraint firstItem="PVa-d2-ig4" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="140" id="wml-r9-d3X"/>
                             <constraint firstItem="ymE-7l-tcS" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="60" id="ynn-Sc-YxP"/>
-                            <constraint firstItem="55m-i2-3SG" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="5" id="yqw-rE-FLx"/>
                             <constraint firstAttribute="trailing" secondItem="0Op-rG-zCC" secondAttribute="trailing" constant="184" id="zKq-GF-ALK"/>
+                            <constraint firstItem="PVa-d2-ig4" firstAttribute="top" secondItem="55m-i2-3SG" secondAttribute="bottom" constant="8" id="zzc-Hr-ieK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
-                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="SecondColor">
                                 <color key="value" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
