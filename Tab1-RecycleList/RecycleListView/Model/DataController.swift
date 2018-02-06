@@ -50,4 +50,10 @@ class DataController{
         return day
     }
     
+    func cardIndex(index: Int) -> Int{
+        var cardNum = index
+        return cardNum
+    }
 }
+
+

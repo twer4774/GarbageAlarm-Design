@@ -16,9 +16,31 @@ class DayCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lbDay: UILabel!
     @IBOutlet weak var lbComment: UILabel!
-    
     @IBOutlet weak var memo: UILabel!
     
+    @IBAction func memoClicked(_ sender: UIButton) {
+        let reload = self.superview! as! UICollectionView
+        var indexPathCell: IndexPath!
+        indexPathCell = (self.superview! as! UICollectionView).indexPath(for: self)! as IndexPath
+        
+        
+        
+        
+        _ = SweetAlert().showAlert("메모", subTitle: "메모하세요",style: AlertStyle.none, buttonTitle: "저장", buttonColor: UIColor.colorFromRGB(0xDD6B55), otherButtonTitle: "취소", theOtherButtonTitle: "삭제", index: indexPathCell)
+        { (isOtherButton, isTheOtherButton) -> Void in
+            
+            if isOtherButton == true && isTheOtherButton == false {
+                _ = SweetAlert().showAlert("취소!", subTitle: "취소되었습니다", style: AlertStyle.error)
+            } else if isTheOtherButton == true && isOtherButton == false{
+                _ = SweetAlert().showAlert("메모지우기!", subTitle:"메모가 지워졌습니다.", style: AlertStyle.warning)
+                 reload.reloadData()
+            } else if isOtherButton == false && isTheOtherButton == false{
+                _ = SweetAlert().showAlert("저장!", subTitle: "저장되었습니다.!", style: AlertStyle.success)
+                reload.reloadData()
+            }
+        }
+        
+    }
     
     //초기화
     override func awakeFromNib() {

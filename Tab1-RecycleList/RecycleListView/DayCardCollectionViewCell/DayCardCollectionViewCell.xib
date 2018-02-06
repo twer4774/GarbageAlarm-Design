@@ -31,9 +31,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쓰레기 버리는 날" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-7l-tcS">
-                                <rect key="frame" x="125" y="60" width="161" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쓰레기 버리는 날" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-7l-tcS">
+                                <rect key="frame" x="125" y="41" width="161" height="87"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,9 +43,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="memo" translatesAutoresizingMaskIntoConstraints="NO" id="PVa-d2-ig4">
-                                <rect key="frame" x="250" y="140" width="26" height="23"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-J9-n9f">
                                 <rect key="frame" x="15" y="170" width="271" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,6 +55,14 @@
                                     <constraint firstAttribute="height" constant="2" id="f61-A5-qUG"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAT-oh-icD">
+                                <rect key="frame" x="215" y="140" width="27" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="memo"/>
+                                <connections>
+                                    <action selector="memoClicked:" destination="U4Q-qz-vKX" eventType="touchUpInside" id="QeA-YF-zlY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OPj-ij-vj7" secondAttribute="trailing" constant="25" id="4Ft-BQ-g3b"/>
@@ -67,27 +72,22 @@
                             <constraint firstAttribute="bottom" secondItem="FPL-82-aaI" secondAttribute="bottom" constant="45" id="JU3-Nf-1UP"/>
                             <constraint firstAttribute="bottom" secondItem="eg0-J9-n9f" secondAttribute="bottom" constant="15" id="MDb-UO-4qX"/>
                             <constraint firstItem="OPj-ij-vj7" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="120" id="SU8-7T-I8D"/>
-                            <constraint firstAttribute="bottom" secondItem="PVa-d2-ig4" secondAttribute="bottom" constant="45" id="TBK-gH-JZg"/>
                             <constraint firstAttribute="trailing" secondItem="FPL-82-aaI" secondAttribute="trailing" constant="237" id="Tkn-1f-RoN"/>
                             <constraint firstItem="eg0-J9-n9f" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="170" id="UxV-zH-VUg"/>
                             <constraint firstAttribute="bottom" secondItem="OPj-ij-vj7" secondAttribute="bottom" constant="170" id="XmU-Fa-hXK"/>
                             <constraint firstItem="55m-i2-3SG" firstAttribute="top" secondItem="ymE-7l-tcS" secondAttribute="bottom" constant="2" id="Zcz-vi-dPd"/>
                             <constraint firstItem="OPj-ij-vj7" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="20" id="aM5-GQ-kkQ"/>
                             <constraint firstAttribute="trailing" secondItem="eg0-J9-n9f" secondAttribute="trailing" constant="15" id="aYX-ek-zTp"/>
-                            <constraint firstItem="PVa-d2-ig4" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="250" id="b38-N3-Wfo"/>
                             <constraint firstItem="eg0-J9-n9f" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="15" id="fRS-KX-wOe"/>
                             <constraint firstAttribute="trailing" secondItem="ymE-7l-tcS" secondAttribute="trailing" constant="15" id="fYu-n5-e47"/>
                             <constraint firstItem="0Op-rG-zCC" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="10" id="gFL-D7-HLc"/>
                             <constraint firstAttribute="bottom" secondItem="ymE-7l-tcS" secondAttribute="bottom" constant="80" id="hrr-uK-M71"/>
                             <constraint firstItem="ymE-7l-tcS" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="125" id="jav-4w-KMw"/>
-                            <constraint firstAttribute="trailing" secondItem="PVa-d2-ig4" secondAttribute="trailing" constant="25" id="sOi-zp-gZY"/>
                             <constraint firstItem="0Op-rG-zCC" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="15" id="ta2-qY-lt4"/>
                             <constraint firstItem="55m-i2-3SG" firstAttribute="leading" secondItem="nUe-Va-Fch" secondAttribute="leading" constant="5" id="uGJ-Kz-bxN"/>
                             <constraint firstAttribute="trailing" secondItem="55m-i2-3SG" secondAttribute="trailing" constant="5" id="wY5-CM-P7o"/>
-                            <constraint firstItem="PVa-d2-ig4" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="140" id="wml-r9-d3X"/>
-                            <constraint firstItem="ymE-7l-tcS" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="60" id="ynn-Sc-YxP"/>
+                            <constraint firstItem="ymE-7l-tcS" firstAttribute="top" secondItem="nUe-Va-Fch" secondAttribute="top" constant="41" id="ynn-Sc-YxP"/>
                             <constraint firstAttribute="trailing" secondItem="0Op-rG-zCC" secondAttribute="trailing" constant="184" id="zKq-GF-ALK"/>
-                            <constraint firstItem="PVa-d2-ig4" firstAttribute="top" secondItem="55m-i2-3SG" secondAttribute="bottom" constant="8" id="zzc-Hr-ieK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
@@ -112,7 +112,7 @@
                 <outlet property="lbDay" destination="OPj-ij-vj7" id="bSZ-ZU-HiB"/>
                 <outlet property="memo" destination="eg0-J9-n9f" id="kJO-i6-WaA"/>
             </connections>
-            <point key="canvasLocation" x="-171.5" y="-159"/>
+            <point key="canvasLocation" x="-80.5" y="-183"/>
         </collectionViewCell>
     </objects>
     <resources>
