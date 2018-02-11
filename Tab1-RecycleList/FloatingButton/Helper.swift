@@ -28,16 +28,16 @@ import UIKit
 internal struct Helper {
 
     static func showAlert(for item: JJActionItem) {
-        showAlert(title: item.titleLabel.text, message: "Item tapped!")
-    }
-
-    static func showAlert(title: String?, message: String?) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        rootViewController?.present(alertController, animated: true, completion: nil)
-    }
-
-    static var rootViewController: UIViewController? {
-        return UIApplication.shared.keyWindow?.rootViewController
+    buttonColor: .blue, otherButtonTitle: "취소", otherButtonColor: .red, theOtherButtonTitle:"알람끄기", theOtherButtonColor: .darkGray){
+            (isOtherButton, isTheOtherButton) -> Void in
+            if isOtherButton == true && isTheOtherButton == false{
+                _ = SweetAlert().showAlert("취소!", subTitle: "취소되었습니다", style: AlertStyle.error)
+            }else if isOtherButton == false && isTheOtherButton == true{
+                _ = SweetAlert().showAlert("알람끄기", subTitle: "알람이 꺼졌습니다.", style: AlertStyle.success)
+            }
+            else {
+                _ = SweetAlert().showAlert("저장!", subTitle: "저장되었습니다", style: AlertStyle.success)
+            }
+        }
     }
 }
