@@ -17,7 +17,7 @@ public enum AlertStyle {
 }
 
 @available(iOS 8.0, *)
-open class SweetAlert: UIViewController {
+open class SweetAlert: UIViewController, UITextFieldDelegate {
     let kBakcgroundTansperancy: CGFloat = 0.7
     let kHeightMargin: CGFloat = 10.0
     let KTopMargin: CGFloat = 20.0
@@ -72,7 +72,7 @@ open class SweetAlert: UIViewController {
         contentView.layer.masksToBounds = true
         contentView.layer.borderWidth = 0.5
         contentView.addSubview(titleLabel)
-        contentView.addSubview(subTitleTextView)
+//        contentView.addSubview(subTitleTextView)
         contentView.backgroundColor = UIColor.colorFromRGB(0xFFFFFF)
         contentView.layer.borderColor = UIColor.colorFromRGB(0xCCCCCC).cgColor
         view.addSubview(contentView)
@@ -100,16 +100,18 @@ open class SweetAlert: UIViewController {
         textField.textAlignment = .center
         textField.placeholder = "메모를 입력해주세요"
         textField.isSecureTextEntry = false
+        textField.delegate = self
+       
     }
     
-    fileprivate func setupSwitchSubTitle(){
-        subTitleTextView.text = ""
-        subTitleTextView.textAlignment = .center
-        subTitleTextView.font = UIFont(name: kFont, size:16)
-        subTitleTextView.textColor = UIColor.colorFromRGB(0x797979)
-        subTitleTextView.isEditable = false
-        alarmSwitch.setOn(true, animated: true)
-        subTitleTextView.addSubview(alarmSwitch)
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if(textField.isEqual(self.textField)){
+            textFieldDidEndEditing(self.textField)
+        }
+        return true
+    }
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder() //키보드숨기기
     }
     
     fileprivate func setupDatePicker(){
@@ -163,7 +165,7 @@ open class SweetAlert: UIViewController {
         }
         
         if self.datePicker.datePickerMode == .time{
-         datePicker.frame = CGRect(x: x, y: y, width: width, height: textViewHeight * 2)
+         datePicker.frame = CGRect(x: x, y: y-30, width: width, height: textViewHeight * 2)
          y += textViewHeight + kHeightMargin
         }
         
@@ -249,9 +251,9 @@ open class SweetAlert: UIViewController {
         //버젼별로 나누어 알림 구현
         if #available(iOS 10, *){
             let localContent = UNMutableNotificationContent()
-            localContent.title = "오늘은 \(dataController.getDay())"
-            localContent.subtitle = "[\(dataController.getComment())] 버리는 날입니다."
-            localContent.body = "메모는 \(dataController.getMemo()!) 입니다"
+            localContent.title = "\(dataController.getDay())"
+            localContent.subtitle = "오늘은 \(dataController.getComment()) 버리는 날"
+            localContent.body = "메모: \(dataController.getMemo()!)"
           
             
             localContent.sound = UNNotificationSound.default()
@@ -278,7 +280,7 @@ open class SweetAlert: UIViewController {
             } else if alarmSwitch.isOn == false{
                 print("False")
             }
-            let trigger = UNCalendarNotificationTrigger(dateMatching: newDate, repeats: alarmSwitch.isOn)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: newDate, repeats: true)
             //발송 요청 객체 정의
             let request = UNNotificationRequest(identifier: "alarm", content: localContent, trigger: trigger)
             
@@ -316,12 +318,8 @@ open class SweetAlert: UIViewController {
             userAlarmAction!(isOtherButton, isTheOtherButton)
             SweetAlertContext.shouldNotAnimate = false
             
-            //하루 알람설정
-            if isOtherButton == false && isTheOtherButton == false{
-                localNotification()
-            }
             //매일 알람설정
-            else if isOtherButton == false && isTheOtherButton == false{
+            if isOtherButton == false && isTheOtherButton == false{
                 localNotification()
             }
             //알람끄기
@@ -529,7 +527,7 @@ open class SweetAlert: UIViewController {
             self.subTitleTextView.text = subTitle
         }
         self.indexPath = index
-       
+        
         buttons = []
         if buttonTitle.isEmpty == false {
             let button: UIButton = UIButton(type: UIButtonType.custom)
@@ -572,7 +570,7 @@ open class SweetAlert: UIViewController {
     
     //DatePicker
     
-    open func showAlertDatePicker(_ title: String, subTitle: String?, style: AlertStyle,buttonTitle: String,buttonColor: UIColor,otherButtonTitle:
+    open func showAlertDatePicker(_ title: String, style: AlertStyle,buttonTitle: String,buttonColor: UIColor,otherButtonTitle:
         String?, otherButtonColor: UIColor?, theOtherButtonTitle: String?, theOtherButtonColor: UIColor?,action: ((_ isOtherButton: Bool, _ isTheOtherButton: Bool) -> Void)? = nil) {
         userAlarmAction = action
         let window: UIWindow = UIApplication.shared.keyWindow!
@@ -581,7 +579,7 @@ open class SweetAlert: UIViewController {
         view.frame = window.bounds
         self.setupContentView()
         self.setupTitleLabel()
-        self.setupSwitchSubTitle()
+//        self.setupSubTitle()
         self.setupDatePicker()
         
         switch style {
@@ -602,9 +600,9 @@ open class SweetAlert: UIViewController {
         }
         
         self.titleLabel.text = title
-        if subTitle != nil {
-            self.subTitleTextView.text = subTitle
-        }
+//        if subTitle != nil {
+//            self.subTitleTextView.text = subTitle
+//        }
         
         datePicker.addTarget(self, action: #selector(datePickerChanged(datePicker:)), for: .valueChanged)
         
