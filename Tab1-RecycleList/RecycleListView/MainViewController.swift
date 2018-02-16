@@ -8,6 +8,7 @@
 
 import UIKit
 import JJFloatingActionButton
+import GoogleMobileAds
 
 class MainViewController: UIViewController {
     
@@ -74,15 +75,24 @@ class MainViewController: UIViewController {
     @IBOutlet weak var calloutLabel: UILabel!
     
     
+    //AdMob
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         dayModel.getJSON()
         
-        bigContentsView.FirstColor = UIColor(red: 0.0/255.0, green: 255.0/255.0, blue: 146.0/255.0, alpha: 1.0)
-        bigContentsView.SecondColor = UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+       
+        //AdMob
+        print("Google Mobile Ads SDK version: \(GADRequest.sdkVersion())")
+        bannerView.adUnitID = "ca-app-pub-yourKey"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
+        
+        //CollectionView
         collectionView.register(UINib(nibName: "DayCardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DayCardCollectionViewCellIdentifier")
         collectionView.clipsToBounds = false
         
@@ -90,6 +100,7 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         
         floatingButtonSetup()
+        
 
         //현재 위치 표시
         if let lm = NMapLocationManager.getSharedInstance() {
@@ -114,11 +125,12 @@ class MainViewController: UIViewController {
             
             minLatitude = myLatitude - 0.002
             maxLatitude = myLatitude + 0.002
-            
-            
         }
+        
        
     }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -145,16 +157,17 @@ class MainViewController: UIViewController {
     
     func floatingButtonSetup(){
         //FloatingButton설정
-        floatingButton.addItem(title: "알람", image: #imageLiteral(resourceName: "alarm-clock white")){
+        floatingButton.addItem(title:"알람", image: #imageLiteral(resourceName: "alarm")) {
             item in
             Helper.showAlert(for: item)
         }
-        floatingButton.addItem(title: "지도", image: #imageLiteral(resourceName: "map")) {
-            (_) in
+        floatingButton.addItem(title:"지도", image: #imageLiteral(resourceName: "map")) { (_) in
             self.setMap()
         }
-        
-        floatingButton.display(inViewController: self)
+        floatingButton.configureDefaultItem { item in
+            item.buttonColor = UIColor(red: 85/255, green: 198/255, blue: 154/255, alpha: 1.0)
+        }
+
     }
     
     
@@ -174,7 +187,7 @@ class MainViewController: UIViewController {
             mapView.delegate = self
             
             // set the application api key for Open MapViewer Library
-            mapView.setClientId("YourNaverClientID")
+            mapView.setClientId("yourKey")
       
             alertController.view.addSubview(innerView)
             innerView.addSubview(mapView)
@@ -527,7 +540,7 @@ extension MainViewController: NMapPOIdataOverlayDelegate, NMapViewDelegate, NMap
     
     func getAPI(){
         var parser = XMLParser()
-        let url = "http://openapi.jejusi.go.kr/rest/cleanhouseinfoservice/getCleanHouseInfoList?serviceKey=YourAPIKEY&pageNo=1&startPage=1&numOfRows=1877&pageSize=1877"
+        let url = "http://openapi.jejusi.go.kr/rest/cleanhouseinfoservice/getCleanHouseInfoList?serviceKey=YourServiceKey&pageNo=1&startPage=1&numOfRows=1877&pageSize=1877"
         
         let urlToSend: URL = URL(string: url)!
         
