@@ -5,3 +5,4 @@
 #### ScrollCardCollectionView: 기존 테이블 뷰로 작성한 요일 목록을 콜렉션뷰의 카드형식으로 보여줌
 #### JJFloatingActionButton: 플로팅버튼추가
 #### AdMob: 배너광고 삽입
+[![Watch the video](https://github.com/twer4774/GarbageAlarm-Design/분리수거앱영상.mov)
